@@ -13,7 +13,7 @@ public Orden save(Orden orden);
 	
 	public Optional<Orden> get(Integer Id);
 	
-	public List<Orden> finAll();
+	public List<Orden> findAll();
 	
 	public List<Orden> finByUsuario (usuario usuario);
 	

@@ -23,7 +23,7 @@ public class DetalleOrden {
 	private Orden orden;
 	
 	@ManyToOne
-	private producto producto;
+	private Producto producto;
 	
 
 	
@@ -90,11 +90,11 @@ public class DetalleOrden {
 		this.orden = orden;
 	}
 
-	public producto getProducto() {
+	public Producto getProducto() {
 		return producto;
 	}
 
-	public void setProducto(producto producto) {
+	public void setProducto(Producto producto) {
 		this.producto = producto;
 	}
 

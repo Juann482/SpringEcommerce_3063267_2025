@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sena.ecommerce.model.Orden;
-import com.sena.ecommerce.model.usuario;
+import com.sena.ecommerce.model.Usuario;
 import com.sena.ecommerce.repository.IOrdenRepository;
 
 @Service
@@ -35,7 +35,7 @@ public class OrdenServiceImplement implements IOrdenService {
 	}
 
 	@Override
-	public List<Orden> finByUsuario(usuario usuario) {
+	public List<Orden> finByUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
 		return ordenRepository.findByusuario(usuario);
 	}

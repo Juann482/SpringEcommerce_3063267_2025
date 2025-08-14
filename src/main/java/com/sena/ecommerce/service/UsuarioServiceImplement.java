@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sena.ecommerce.model.usuario;
+import com.sena.ecommerce.model.Usuario;
 import com.sena.ecommerce.repository.IUsuarioRepository;
 
 @Service
@@ -18,19 +18,19 @@ public class UsuarioServiceImplement implements IUsuarioService{
 	private IUsuarioRepository usuariorepository;
 
 	@Override
-	public usuario save(usuario usuario) {
+	public Usuario save(Usuario usuario) {
 		// TODO Auto-generated method stub
 		return usuariorepository.save(usuario);
 	}
 
 	@Override
-	public Optional<usuario> get(Integer id) {
+	public Optional<Usuario> get(Integer id) {
 		// TODO Auto-generated method stub
 		return Optional.empty();
 	}
 
 	@Override
-	public void update(usuario usuario) {
+	public void update(Usuario usuario) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -42,19 +42,19 @@ public class UsuarioServiceImplement implements IUsuarioService{
 	}
 
 	@Override
-	public Optional<usuario> findById(Integer id) {
+	public Optional<Usuario> findById(Integer id) {
 		// TODO Auto-generated method stub
 		return usuariorepository.findById(id);
 	}
 
 	@Override
-	public Optional<usuario> findByEmail(Integer email) {
+	public Optional<Usuario> findByEmail(String email) {
 		// TODO Auto-generated method stub
-		return usuariorepository.findByEmail(null);
+		return usuariorepository.findByEmail(email);
 	}
 
 	@Override
-	public List<usuario> findAll() {
+	public List<Usuario> findAll() {
 		// TODO Auto-generated method stub
 		return usuariorepository.findAll();
 	}

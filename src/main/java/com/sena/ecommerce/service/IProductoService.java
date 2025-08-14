@@ -3,18 +3,18 @@ package com.sena.ecommerce.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.sena.ecommerce.model.producto;
+import com.sena.ecommerce.model.Producto;
 
 public interface IProductoService {
 	
-	public producto save(producto producto);
+	public Producto save(Producto producto);
 	
-	public Optional<producto> get(Integer Id);
+	public Optional<Producto> get(Integer Id);
 	
-	public void update(producto producto);
+	public void update(Producto producto);
 	
 	public void delete(Integer Id);
 	
-	public List<producto> finAll();
+	public List<Producto> finAll();
 
 }

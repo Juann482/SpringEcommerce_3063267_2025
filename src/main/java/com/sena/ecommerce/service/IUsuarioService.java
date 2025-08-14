@@ -3,22 +3,22 @@ package com.sena.ecommerce.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.sena.ecommerce.model.usuario;
+import com.sena.ecommerce.model.Usuario;
 
 public interface IUsuarioService {
 	
-	public usuario save(usuario usuario);
+	public Usuario save(Usuario usuario);
 	
-	public Optional<usuario> get(Integer id);
+	public Optional<Usuario> get(Integer id);
 	
-	public void update(usuario usuario);
+	public void update(Usuario usuario);
 	
 	public void delete(Integer id);
 	
-	public Optional<usuario> findById(Integer id);
+	public Optional<Usuario> findById(Integer id);
 	
-	public Optional<usuario> findByEmail(Integer email);
+	public Optional<Usuario> findByEmail(String email);
 	
-	List<usuario> findAll();
+	List<Usuario> findAll();
 
 }

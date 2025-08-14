@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "usuarios")
-public class usuario {
+public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,18 +26,18 @@ public class usuario {
 	private String tipo; //Admin o usuario
 	
 	@OneToMany(mappedBy = "usuario")
-	private List<producto>productos;
+	private List<Producto>productos;
 	
 	@OneToMany(mappedBy = "usuario")
 	private List<Orden>ordenes;
 
 	//metodo constructor vacio
-	public usuario() {
+	public Usuario() {
 		
 	}
 
 	//Metodo constructor con campos
-	public usuario(Integer id, String nombre, String username, String email, String documento, String direccion,
+	public Usuario(Integer id, String nombre, String username, String email, String documento, String direccion,
 			String telefono, String password, String tipo) {
 		super();
 		this.id = id;
@@ -124,11 +124,11 @@ public class usuario {
 		this.tipo = tipo;
 	}
 
-	public List<producto> getProductos() {
+	public List<Producto> getProductos() {
 		return productos;
 	}
 
-	public void setProductos(List<producto> productos) {
+	public void setProductos(List<Producto> productos) {
 		this.productos = productos;
 	}
 

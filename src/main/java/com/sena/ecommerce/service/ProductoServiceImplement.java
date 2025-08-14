@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.sena.ecommerce.model.producto;
+import com.sena.ecommerce.model.Producto;
 import com.sena.ecommerce.repository.IProductoRepository;
 
 public class ProductoServiceImplement  implements IProductoService{
@@ -14,19 +14,19 @@ public class ProductoServiceImplement  implements IProductoService{
 	private IProductoRepository productoRepository;
 
 	@Override
-	public producto save(producto producto) {
+	public Producto save(Producto producto) {
 		// TODO Auto-generated method stub
 		return productoRepository.save(producto);
 	}
 
 	@Override
-	public Optional<producto> get(Integer Id) {
+	public Optional<Producto> get(Integer Id) {
 		// TODO Auto-generated method stub
 		return productoRepository.findById(Id);
 	}
 
 	@Override
-	public void update(producto producto) {
+	public void update(Producto producto) {
 		// TODO Auto-generated method stub
 		productoRepository.save(producto);
 		
@@ -40,7 +40,7 @@ public class ProductoServiceImplement  implements IProductoService{
 	}
 
 	@Override
-	public List<producto> finAll() {
+	public List<Producto> finAll() {
 		// TODO Auto-generated method stub
 		return productoRepository.findAll();
 	}

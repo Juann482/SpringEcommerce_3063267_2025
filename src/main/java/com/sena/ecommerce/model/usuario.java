@@ -150,10 +150,5 @@ public class usuario {
 	} 
 	
 	
-	
-	
-	
-	
-	
 
 }

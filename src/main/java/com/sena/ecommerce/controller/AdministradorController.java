@@ -1,0 +1,17 @@
+package com.sena.ecommerce.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+//decirle a la clase que es de tipo controlador
+@Controller
+@RequestMapping("/administrador") //Solicitudes de mapeo al directorio administrador - se mapeara las vistas
+public class AdministradorController {
+	
+	@GetMapping("")
+	public String home() {
+		return "administrador/home"; //Estructura basica 
+	}
+
+}

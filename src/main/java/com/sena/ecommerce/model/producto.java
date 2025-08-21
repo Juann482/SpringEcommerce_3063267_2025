@@ -8,34 +8,35 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "producto")
-
+@Table(name = "productos")
 public class Producto {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
 	private Integer id;
 	private String nombre;
-	private String dscripcion;
+	private String descripcion;
 	private String imagen;
 	private Double precio;
 	private Integer cantidad;
-	
+
 	@ManyToOne
 	private Usuario usuario;
-	
+
 	public Producto() {
-		
+
 	}
 
-	public Producto(Integer id, String nombre, String dscripcion, String imagen, Double precio) {
+	public Producto(Integer id, String nombre, String descripcion, String imagen, Double precio, Integer cantidad,
+			Usuario usuario) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
-		this.dscripcion = dscripcion;
+		this.descripcion = descripcion;
 		this.imagen = imagen;
 		this.precio = precio;
+		this.cantidad = cantidad;
+		this.usuario = usuario;
 	}
 
 	public Integer getId() {
@@ -54,12 +55,12 @@ public class Producto {
 		this.nombre = nombre;
 	}
 
-	public String getDscripcion() {
-		return dscripcion;
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	public void setDscripcion(String dscripcion) {
-		this.dscripcion = dscripcion;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public String getImagen() {
@@ -96,10 +97,8 @@ public class Producto {
 
 	@Override
 	public String toString() {
-		return "producto [id=" + id + ", nombre=" + nombre + ", dscripcion=" + dscripcion + ", imagen=" + imagen
-				+ ", precio=" + precio + ", cantidad=" + cantidad + "]";
+		return "Producto [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", imagen=" + imagen
+				+ ", precio=" + precio + ", cantidad=" + cantidad + ", usuario=" + usuario + "]";
 	}
-	
-	
-	
+
 }

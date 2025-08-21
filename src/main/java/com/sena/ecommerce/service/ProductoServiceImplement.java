@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.sena.ecommerce.model.Producto;
 import com.sena.ecommerce.repository.IProductoRepository;
 
+@Service
 public class ProductoServiceImplement  implements IProductoService{
 	
 	@Autowired
@@ -40,7 +42,7 @@ public class ProductoServiceImplement  implements IProductoService{
 	}
 
 	@Override
-	public List<Producto> finAll() {
+	public List<Producto> findAll() {
 		// TODO Auto-generated method stub
 		return productoRepository.findAll();
 	}

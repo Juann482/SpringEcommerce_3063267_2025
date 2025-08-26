@@ -47,12 +47,12 @@ public class ProductoController {
 		
 	}
 	
-	//
+	//Metodo para el formulario de edicion de producto
 	
-	@GetMapping("/edit/{=id}")
+	@GetMapping("/edit/{id}")
 	public String edit(@PathVariable Integer id, Model model) {
 		Producto p = new Producto();
-		//
+		//Retorna labusqueda de un objeto de tipo producto con el id
 		Optional<Producto> op = productoservice.get(id);
 		p = op.get();
 		LOGGER.warn("Busqueda de producto por id {}", p);
@@ -61,7 +61,7 @@ public class ProductoController {
 		
 	}
 	
-	//
+	//Metodo de actualizacion de datos
 	@PostMapping("/update")
 	public String update(Producto producto) {
 		LOGGER.info("Este es el objeto de producto a actualizar en la DB {}", producto);
@@ -75,7 +75,7 @@ public class ProductoController {
 	@GetMapping("/delete/{id}")
 	public String delete (@PathVariable Integer id) {
 		productoservice.delete(id);
-		return "redirrect:/productos";
+		return "redirect:/productos";
 	}
 
 }

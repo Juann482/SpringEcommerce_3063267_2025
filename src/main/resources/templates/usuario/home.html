@@ -78,14 +78,18 @@
         <div class="row g-4">
             <div class="col-md-6 col-lg-3" th:each="producto: ${productos}">
                 <div class="card product-card">
-                    <img th:src="@{/images/{img} (img=${producto.imagen})}" alt="${producto.imagen}" class="card-img-top" >
+                    <img th:src="@{/images/{img} (img=${producto.imagen})}" th:alt="${producto.imagen}" class="card-img-top" >
                     <div class="card-body">
                         <h5 class="card-title" th:text="${producto.nombre}"></h5>
-                        <p class="card-text" th:text="${producto.descripcion}"></p>
-                        <p class="h5 text-primary" th:text="${#strings.concat('$', #numbers.formatDecimal(producto.precio, 0, 'POINT', 0, 'POINT'))}"></p>
-                        <button class="btn btn-primary w-100 add-to-cart">
-                            <i class="bi bi-cart-plus me-1"></i> Añadir al carrito
-                        </button>
+                        <p class="card-text" th:text="${producto.descripcion}">
+							
+						</p>
+                        <p class="h5 text-primary" th:text="${#strings.concat('$', #numbers.formatDecimal(productos.precio, 0, 'POINT', 0, 'POINT'))}">
+							
+						</p>
+                        <a class="btn btn-primary w-100" th:href="@{/productohome/{id} (id=${productos.id})}">
+                            <i class="bi bi-cart-plus me-1"></i> Ver producto
+                        </a>
                     </div>
                 </div>
             </div>
